@@ -15,9 +15,9 @@ import {Component } from '@angular/core';
 @Component({
   selector:"whatFor-JustNAme",
   template: ` <div><h1>{{pageTitle}}</h1>
-  <div>First C</div>
-  </div>
-  `
+                <pm-product></pm-product>
+              </div>
+            `
 })
  
 export class AppComponent{

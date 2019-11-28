@@ -1,10 +1,26 @@
-import { Component } from '@angular/core';
+// import { Component } from '@angular/core';
+
+// @Component({
+//   selector: 'pm-root',
+//   templateUrl: './app.component.html',
+//   styleUrls: ['./app.component.css']
+// })
+// export class AppComponent {
+//   title = 'Angular: Getting Started';
+// }
+
+import {Component } from '@angular/core';
+
 
 @Component({
-  selector: 'pm-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector:"whatFor-JustNAme",
+  template: ` <div><h1>{{pageTitle}}</h1>
+  <div>First C</div>
+  </div>
+  `
 })
-export class AppComponent {
-  title = 'Angular: Getting Started';
+ 
+export class AppComponent{
+  pageTitle: string = "First Component";
 }
+

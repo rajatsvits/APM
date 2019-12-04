@@ -16,7 +16,8 @@
             </div>
         </div>
         <div class='table-responsive'>
-            <table class='table'>
+            <table class='table' *ngIf='products && products.length'>
+                <!-- *ngIf if product table is there and it contains some products -->
                 <thead>
                     <tr>
                         <th>
@@ -33,6 +34,16 @@
                 </thead>
                 <tbody>
                     <!-- Since we don't want to hard code our products here so we leave it empty -->
+                    <tr *ngFor = 'let product of products'><!-- tr: table row, td: table data -->
+                        <td></td>
+                        <td>{{product.productName}}</td>
+                        <td>{{product.productCode}}</td>
+                        <td>{{product.releaseDate}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.starRating}}</td>
+                        
+                    </tr>
+
                 </tbody>
             </table>
 

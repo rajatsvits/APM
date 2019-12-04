@@ -35,7 +35,12 @@
                 <tbody>
                     <!-- Since we don't want to hard code our products here so we leave it empty -->
                     <tr *ngFor = 'let product of products'><!-- tr: table row, td: table data -->
-                        <td></td>
+                        <td>
+                            <img [src] = 'product.imageUrl'
+                                    [title] = 'product.productName'
+                                    [style.width.px] = 'imageWidth'
+                                    [style.margin.px] = 'imageMargin'>
+                        </td>
                         <td>{{product.productName}}</td>
                         <td>{{product.productCode}}</td>
                         <td>{{product.releaseDate}}</td>

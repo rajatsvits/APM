@@ -13,14 +13,15 @@ import {Component } from '@angular/core';
 
 
 @Component({
-  selector:"whatFor-JustNAme",
-  template: ` <div><h1>{{pageTitle}}</h1>
-                <pm-product></pm-product>
-              </div>
-            `
+  selector:"pm-root",
+  templateUrl: './app.component.html',
+  // template: ` <div><h1>{{pageTitle}}</h1>
+  // <div>First C</div>
+  // </div>
+  // `
 })
  
 export class AppComponent{
-  pageTitle: string = "First Component";
+  pageTitle: string = "... Angular Project...";
 }
 

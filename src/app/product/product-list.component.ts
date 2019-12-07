@@ -85,8 +85,13 @@ export class ProductListComponent implements OnInit {
 
     constructor(){
         this.filterProduct=this.products;
-        this.listFilter = 'cart';
+        this.listFilter = '';
     }
+
+    onRatingClicked (message : string) : void {
+        this.pageTitle = 'Product list: ' + message;
+    }
+
     performFilter(filterby : string) : IProduct[]{
         filterby = filterby.toLocaleLowerCase();
         return this.products.filter((product : IProduct) => product.productName.toLocaleLowerCase().indexOf(filterby)!=-1);

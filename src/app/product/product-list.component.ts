@@ -13,7 +13,23 @@ export class ProductListComponent implements OnInit {
     imageWidth  :number = 50;
     imageMargin  :number = 2;
     showImage  : boolean = false;
-    listFilter : string = 'cart';
+
+
+    // listFilter : string = 'cart';
+    _listFilter : string;
+    get listFilter() : string{
+        return this._listFilter;
+    }
+
+    set listFilter(value:string){
+        this._listFilter=value;
+        //need to check weather list is not empty.
+        this.filterProduct=this.listFilter ? this.performFilter(this._listFilter) : this.products;
+    }
+
+    
+
+    filterProduct : IProduct[] ;
     products : IProduct[] =[
         {
             "productId": 1,
@@ -36,6 +52,15 @@ export class ProductListComponent implements OnInit {
             "imageUrl": "assets/images/garden_cart.png"
           }
     ];
+
+    constructor(){
+        this.filterProduct=this.products;
+        this.listFilter = 'cart';
+    }
+    performFilter(filterby : string) : IProduct[]{
+        filterby = filterby.toLocaleLowerCase();
+        return this.products.filter((product : IProduct) => product.productName.toLocaleLowerCase().indexOf(filterby)!=-1);
+    }
 
     toggleImage() :  void {
         this.showImage = !this.showImage;

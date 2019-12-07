@@ -36,7 +36,8 @@
                 </thead>
                 <tbody>
                     <!-- Since we don't want to hard code our products here so we leave it empty -->
-                    <tr *ngFor = 'let product of products'><!-- tr: table row, td: table data -->
+                    <!-- let product of filterProduct this bind our variable product to filterProduct property -->
+                    <tr *ngFor = 'let product of filterProduct'><!-- tr: table row, td: table data -->
                         <td>
                             <img  *ngIf= 'showImage'
                                     [src] = 'product.imageUrl'

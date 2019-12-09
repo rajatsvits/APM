@@ -11,7 +11,8 @@ import { StarComponent } from './shared/start.component';
     AppComponent,
     ProductListComponent,
     ConvertToSpacesPipes,
-    StarComponent
+    StarComponent,
+    
   ],
   imports: [
     BrowserModule,

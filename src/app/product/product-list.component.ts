@@ -61,5 +61,6 @@ export class ProductListComponent implements OnInit {
         console.log(this.filterProduct+":"+ this.products);
         // console.log("In OnInit");
         // throw new Error("Method not implemented.");
+        
     }
-}
+  }

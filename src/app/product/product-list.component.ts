@@ -15,6 +15,7 @@ export class ProductListComponent implements OnInit {
     imageWidth  :number = 50;
     imageMargin  :number = 2;
     showImage  : boolean = false;
+    errorMessage : String ;
 
 
     // listFilter : string = 'cart';
@@ -56,8 +57,16 @@ export class ProductListComponent implements OnInit {
     ngOnInit(): void {
         // It run for component initialization and data retrieval
         // Note the constructor will run before ngOnInit so make sure its variable are initialized
-        this.products = this.productService.getProducts();
-        this.filterProduct=this.products;
+        this.productService.getProducts().subscribe({
+            next :products => {
+                this.products = products,
+                this.filterProduct=this.products
+            },
+            error : err => this.errorMessage= err
+        });
+
+        // Subscribe here kicks of the http request then asynchronously receive data and notification form the observable  
+        
         console.log(this.filterProduct+":"+ this.products);
         // console.log("In OnInit");
         // throw new Error("Method not implemented.");

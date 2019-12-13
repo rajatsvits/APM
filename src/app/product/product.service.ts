@@ -9,7 +9,7 @@ import { tap, catchError } from 'rxjs/operators';
 })
 export class ProductService {
 
-    private productUrl= 'src/api/products/products.json';
+    private productUrl= '../../api/products/products.json';
     constructor(private http: HttpClient){
 
     }

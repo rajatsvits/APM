@@ -4,9 +4,19 @@
     Welcome to Rajat {{title}}!!
     
   </h1>
-  <div>{{pageTitle}}</div>
   
 </div>
 <div>
-  <pm-product></pm-product>
+  <!-- <pm-product></pm-product> -->
+  <nav class="navbar navbar-expand navbar-light bg-light">
+    <a class="navbar-brand">{{pageTitle}}</a>
+    <ul class="nav nav-pills">
+      <!-- we are linking the welcome element using router link -->
+        <li><a class="nav-link" [routerLink] = "['/welcome']">Home</a></li>
+        <li><a class="nav-link" [routerLink] = "['/product']">Product List</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
 </div>

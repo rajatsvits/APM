@@ -3,7 +3,8 @@ import { IProduct } from './product';
 import { ProductService } from './product.service';
 
 @Component({
-    selector:"pm-product",
+    // No longer require the selector as we are creating a navigation menu.
+    // selector:"pm-product",
     templateUrl:"./product-list.component.html",
     styleUrls: ['./product-list.component.css'],
     providers: [ProductService]
